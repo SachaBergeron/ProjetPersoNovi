@@ -1,0 +1,20 @@
+version: '2'
+services:
+  mariadb:
+    extends:
+      file: docker-compose.common.yml
+      service: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    restart: always
+
+  php:
+    extends:
+      file: docker-compose.common.yml
+      service: php
+    links:
+      - mariadb
+    restart: always

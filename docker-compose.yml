@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mariadb:
+    extends:
+      file: docker-compose.common.yml
+      service: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+  php:
+    extends: 
+      file: docker-compose.common.yml
+      service: php
+    links:
+      - mariadb

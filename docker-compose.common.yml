@@ -1,0 +1,23 @@
+version: '2'
+services:
+  mariadb:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: SymfonyDocker
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+
+  php:
+    build: ./docker/php/
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/
+      - ./docker/apache/sites-enabled:/etc/apache2/sites-enabled/
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+    working_dir: /var/www/
