@@ -69,6 +69,17 @@ class LoginFormAuthAuthenticator extends AbstractFormLoginAuthenticator
         {
             $user = $this->entityManager->getRepository(Admin::class)->findOneBy(['username' => $credentials['username']]);
         }
+//        elseif($credentials['profil'] == 'enseignant'){
+//            $user = $this->entityManager->getRepository(Prof::class)->findOneBy(['username' => $credentials['username']]);
+//        }
+//        else{
+//            if($credentials['profil'] == 'etudiant')
+//            {
+//                $user = $this->entityManager->getRepository(Etudiant::class)->findOneBy(['username' => $credentials['username']]);
+//            }
+//        }
+
+
 
         if (!$user) {
             // fail authentication with a custom error
@@ -89,7 +100,8 @@ class LoginFormAuthAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+        return new RedirectResponse($this->urlGenerator->generate('redir'));
+
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

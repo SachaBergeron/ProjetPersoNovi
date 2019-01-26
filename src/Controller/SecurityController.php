@@ -21,4 +21,36 @@ class SecurityController extends AbstractController
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
+
+    /**
+     * Fonction de déconnexion
+     *
+     * Cette fonction permet à l'utilisateur de se déconnecter (géré par security.yaml, donc vide).
+     *
+     * @return void
+     *
+     * @Route("/deconnexion", name="security_logout")
+     */
+    public function logout(){
+    }
+
+    /**
+     * @Route("/login/redir", name="redir")
+     */
+    public function redirection()
+    {
+        if($this->isGranted('ROLE_ADMIN'))
+        {
+            return $this->redirectToRoute('admin_index');
+        }
+        elseif ($this->isGranted('ROLE_PROF'))
+        {
+            return $this->redirectToRoute('accueil');
+        }
+        elseif($this->isGranted('ROLE_ETUDIANT'))
+        {
+            return $this->redirectToRoute('accueil');
+        }
+
+    }
 }
