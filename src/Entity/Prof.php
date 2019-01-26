@@ -3,15 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
- * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * @ORM\Entity(repositoryClass="App\Repository\ProfRepository")
  */
-class Admin implements UserInterface
+class Prof implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -35,6 +33,16 @@ class Admin implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -71,7 +79,7 @@ class Admin implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_ADMIN';
+        $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -113,6 +121,30 @@ class Admin implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
     }
 
     public function getEmail(): ?string
