@@ -79,7 +79,7 @@ class Prof implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $roles[] = 'ROLE_PROF';
 
         return array_unique($roles);
     }
