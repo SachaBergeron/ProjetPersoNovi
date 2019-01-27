@@ -3,14 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Admin;
-use App\Form\RegistrationFormType;
+use App\Form\AdminRegistrationFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class RegistrationController extends AbstractController
+class AdminRegistrationController extends AbstractController
 {
     /**
      * @Route("/register", name="app_register")
@@ -18,7 +18,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = new Admin();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(AdminRegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -39,7 +39,7 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('accueil');
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('adminRegistration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }
