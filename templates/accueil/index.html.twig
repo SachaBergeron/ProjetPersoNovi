@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Novi - Suivi de Notes{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Bienvenue sur Novi</h1>
+        {% if not app.user %}
+            <h2>Veuillez vous identifier</h2>
+            <a class="btn btn-primary btn-lg btn-block" href="{{ path("security_login") }}">Connexion</a>
+        {% endif %}
+    </div>
+{% endblock %}

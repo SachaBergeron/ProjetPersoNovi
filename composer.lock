@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cee4085fe3fa88057621162b3c43239f",
+    "content-hash": "32993537aa0fb5a5f8499b6e136e2b3b",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1300,6 +1300,47 @@
                 "rest"
             ],
             "time": "2016-10-17T18:31:11+00:00"
+        },
+        {
+            "name": "hackzilla/password-generator",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hackzilla/password-generator.git",
+                "reference": "d3d6ae5df2960a7ac21e73ffd952958b3fbbaa68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hackzilla/password-generator/zipball/d3d6ae5df2960a7ac21e73ffd952958b3fbbaa68",
+                "reference": "d3d6ae5df2960a7ac21e73ffd952958b3fbbaa68",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master|^1.0",
+                "sllh/php-cs-fixer-styleci-bridge": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hackzilla\\PasswordGenerator\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Platt",
+                    "email": "github@ofdan.co.uk",
+                    "homepage": "http://www.hackzilla.org"
+                }
+            ],
+            "description": "Password Generator Library",
+            "time": "2017-07-15T09:55:13+00:00"
         },
         {
             "name": "jdorn/sql-formatter",

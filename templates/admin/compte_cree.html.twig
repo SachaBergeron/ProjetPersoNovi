@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations de création{% endblock %}
+
+{% block body %}
+    <h1>Login et Password du nouvel {{ profil }}</h1>
+    <h2>Veuillez noter ces informations</h2>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Login</th>
+            <td>{{ reponse_username }}</td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>{{ reponse_password }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a class="btn" href="{{ path('admin_index') }}">retour à l'accueil admin</a>
+{% endblock %}

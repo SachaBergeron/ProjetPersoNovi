@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Novi - Administration{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .container{
+            margin: 0;
+        }
+
+        aside{
+            display:flex; flex-direction:column; width:20%; margin-left:0; color:white;
+        }
+
+        aside a{
+            margin-bottom:20px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <aside>
+        <a href="" class="btn btn-primary">Ajouter un Module</a>
+        <a href="{{ path("prof_register") }}" class="btn btn-primary">Ajouter un Enseignant</a>
+        <a href="{{ path("etudiant_register") }}" class="btn btn-primary">Ajouter un Etudiant</a>
+    </aside>
+{% endblock %}
