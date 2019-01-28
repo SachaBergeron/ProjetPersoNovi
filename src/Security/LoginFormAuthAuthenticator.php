@@ -3,6 +3,8 @@
 namespace App\Security;
 
 use App\Entity\Admin;
+use App\Entity\Etudiant;
+use App\Entity\Prof;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -69,15 +71,15 @@ class LoginFormAuthAuthenticator extends AbstractFormLoginAuthenticator
         {
             $user = $this->entityManager->getRepository(Admin::class)->findOneBy(['username' => $credentials['username']]);
         }
-//        elseif($credentials['profil'] == 'enseignant'){
-//            $user = $this->entityManager->getRepository(Prof::class)->findOneBy(['username' => $credentials['username']]);
-//        }
-//        else{
-//            if($credentials['profil'] == 'etudiant')
-//            {
-//                $user = $this->entityManager->getRepository(Etudiant::class)->findOneBy(['username' => $credentials['username']]);
-//            }
-//        }
+        elseif($credentials['profil'] == 'enseignant'){
+            $user = $this->entityManager->getRepository(Prof::class)->findOneBy(['username' => $credentials['username']]);
+        }
+        else{
+            if($credentials['profil'] == 'etudiant')
+            {
+                $user = $this->entityManager->getRepository(Etudiant::class)->findOneBy(['username' => $credentials['username']]);
+            }
+        }
 
 
 
