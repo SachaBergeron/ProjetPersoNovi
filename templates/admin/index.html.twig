@@ -6,6 +6,7 @@
     <style>
         .container{
             margin: 0;
+            display: flex;
         }
 
         aside{
@@ -15,13 +16,63 @@
         aside a{
             margin-bottom:20px;
         }
+
+        #modules{
+            width:100%; margin-left:50px;
+        }
+
+        #actions{
+            display:flex; justify-content:space-between
+        }
+
     </style>
 {% endblock %}
 
 {% block body %}
     <aside>
-        <a href="" class="btn btn-primary">Ajouter un Module</a>
-        <a href="{{ path("prof_register") }}" class="btn btn-primary">Ajouter un Enseignant</a>
-        <a href="{{ path("etudiant_register") }}" class="btn btn-primary">Ajouter un Etudiant</a>
+        <a href="{{ path("module_new") }}" class="btn btn-primary">Ajouter un Module</a>
+        <a href="{{ path("prof_register") }}" class="btn btn-primary" style="margin-bottom:5px;">Ajouter un Enseignant</a>
+        <a href="{{ path("prof_affiche") }}" class="btn btn-info">Afficher les Enseignants</a>
+        <a href="{{ path("etudiant_register") }}" class="btn btn-primary" style="margin-bottom:5px;">Ajouter un Etudiant</a>
+        <a href="" class="btn btn-info">Afficher les Etudiants</a>
     </aside>
+
+    <div id="modules">
+        <h1>Modules</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Volume horaire</th>
+                <th>Coefficient</th>
+                <th>Enseignant</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for module in modules %}
+                <tr>
+                    <td>{{ module.nom }}</td>
+                    <td>{{ module.volHoraire }}</td>
+                    <td>{{ module.coefficient }}</td>
+                    <td>{% if(module.enseignant) %}
+                            {{ module.enseignant.prenom }} {{ module.enseignant.nom }}
+                        {% else %}
+                            Libre
+                        {% endif %}
+                    </td>
+                    <td id="actions">
+                        <a class="btn btn-warning" href="{{ path('module_edit', {'id': module.id}) }}">Modifier</a>
+                        {{ include('module/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun module trouvé.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

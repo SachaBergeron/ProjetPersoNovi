@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des enseignants{% endblock %}
+
+{% block body %}
+    <h1>Enseignants</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prof in profs %}
+            <tr>
+                <td>{{ prof.prenom }}</td>
+                <td>{{ prof.nom }}</td>
+                <td>{{ prof.username }}</td>
+                <td>{{ prof.email }}</td>
+                <td style="display:flex; justify-content:space-between">
+                    <a class="btn btn-warning" href="{{ path('prof_edit', {'id': prof.id}) }}">edit</a>
+                    {{ include('prof/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun Enseignant trouvé.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-secondary" href="{{ path('admin_index') }}">Retour</a>
+
+{% endblock %}

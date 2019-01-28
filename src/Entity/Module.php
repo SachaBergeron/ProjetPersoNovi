@@ -33,7 +33,7 @@ class Module
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Prof", inversedBy="modules")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $enseignant;
 
