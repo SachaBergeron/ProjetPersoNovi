@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Module
      * @ORM\JoinColumn(nullable=true)
      */
     private $enseignant;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Controle", mappedBy="module", orphanRemoval=true)
+     */
+    private $controles;
+
+    public function __construct()
+    {
+        $this->controles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +98,37 @@ class Module
     public function setEnseignant(?Prof $enseignant): self
     {
         $this->enseignant = $enseignant;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Controle[]
+     */
+    public function getControles(): Collection
+    {
+        return $this->controles;
+    }
+
+    public function addControle(Controle $controle): self
+    {
+        if (!$this->controles->contains($controle)) {
+            $this->controles[] = $controle;
+            $controle->setModule($this);
+        }
+
+        return $this;
+    }
+
+    public function removeControle(Controle $controle): self
+    {
+        if ($this->controles->contains($controle)) {
+            $this->controles->removeElement($controle);
+            // set the owning side to null (unless already changed)
+            if ($controle->getModule() === $this) {
+                $controle->setModule(null);
+            }
+        }
 
         return $this;
     }

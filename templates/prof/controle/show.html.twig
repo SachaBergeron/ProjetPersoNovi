@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Controle{% endblock %}
+
+{% block body %}
+    <h1>Controle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ controle.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ controle.nom }}</td>
+            </tr>
+            <tr>
+                <th>Coefficient</th>
+                <td>{{ controle.coefficient }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ controle.date ? controle.date|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('controle_index') }}">back to list</a>
+
+    <a href="{{ path('controle_edit', {'id': controle.id}) }}">edit</a>
+
+    {{ include('controle/_delete_form.html.twig') }}
+{% endblock %}

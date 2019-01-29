@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Novi - Espace Enseignant{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .container{
+            margin: 0;
+            display: flex;
+        }
+
+        aside{
+            display:flex; flex-direction:column; width:20%; margin-left:0; color:white;
+        }
+
+        aside a{
+            margin-bottom:20px;
+        }
+
+        #modules{
+            width:100%; margin-left:50px;
+        }
+
+        #actions{
+            display:flex; justify-content:space-between
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <aside>
+        <a href="" class="btn btn-primary">lien</a>
+        <a href="" class="btn btn-primary">lien</a>
+    </aside>
+
+    <div id="modules">
+        <h1>Vos Modules</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Volume horaire</th>
+                <th>Coefficient</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for module in modules %}
+                <tr>
+                    <td>{{ module.nom }}</td>
+                    <td>{{ module.volHoraire }}</td>
+                    <td>{{ module.coefficient }}</td>
+                    <td id="actions">
+                        <a class="btn btn-primary" href="{{ path('module_controles', {'id': module.id}) }}">Voir les contrôles du module</a>
+                        <a class="btn btn-warning" href="{{ path('module_edit', {'id': module.id}) }}">Modifier</a>
+                        {{ include('admin/module/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun module trouvé.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
