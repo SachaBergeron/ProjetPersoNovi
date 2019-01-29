@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des enseignants{% endblock %}
+{% block title %}Liste des étudiants{% endblock %}
 
 {% block body %}
-    <h1>Enseignants</h1>
+    <h1>Etudiants</h1>
 
     <table class="table">
         <thead>
@@ -16,20 +16,20 @@
             </tr>
         </thead>
         <tbody>
-        {% for prof in profs %}
+        {% for etudiant in etudiants %}
             <tr>
-                <td>{{ prof.prenom }}</td>
-                <td>{{ prof.nom }}</td>
-                <td>{{ prof.username }}</td>
-                <td>{{ prof.email }}</td>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.username }}</td>
+                <td>{{ etudiant.email }}</td>
                 <td style="display:flex; justify-content:space-between">
-                    <a class="btn btn-warning" href="{{ path('prof_edit', {'id': prof.id}) }}">edit</a>
-                    {{ include('prof/_delete_form.html.twig') }}
+                    <a class="btn btn-warning" href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+                    {{ include('admin/etudiant/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">Aucun Enseignant trouvé.</td>
+                <td colspan="8">Aucun étudiant trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>

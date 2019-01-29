@@ -34,7 +34,7 @@
         <a href="{{ path("prof_register") }}" class="btn btn-primary" style="margin-bottom:5px;">Ajouter un Enseignant</a>
         <a href="{{ path("prof_affiche") }}" class="btn btn-info">Afficher les Enseignants</a>
         <a href="{{ path("etudiant_register") }}" class="btn btn-primary" style="margin-bottom:5px;">Ajouter un Etudiant</a>
-        <a href="" class="btn btn-info">Afficher les Etudiants</a>
+        <a href="{{ path("etudiant_affiche") }}" class="btn btn-info">Afficher les Etudiants</a>
     </aside>
 
     <div id="modules">
@@ -64,7 +64,7 @@
                     </td>
                     <td id="actions">
                         <a class="btn btn-warning" href="{{ path('module_edit', {'id': module.id}) }}">Modifier</a>
-                        {{ include('module/_delete_form.html.twig') }}
+                        {{ include('admin/module/_delete_form.html.twig') }}
                     </td>
                 </tr>
             {% else %}

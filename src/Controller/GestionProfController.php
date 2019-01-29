@@ -13,14 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/admin/enseignant")
  */
-class ProfController extends AbstractController
+class GestionProfController extends AbstractController
 {
     /**
      * @Route("/", name="prof_affiche", methods={"GET"})
      */
     public function index(ProfRepository $profRepository): Response
     {
-        return $this->render('prof/index.html.twig', [
+        return $this->render('admin/prof/index.html.twig', [
             'profs' => $profRepository->findAll(),
         ]);
     }
@@ -74,7 +74,7 @@ class ProfController extends AbstractController
             ]);
         }
 
-        return $this->render('prof/edit.html.twig', [
+        return $this->render('admin/prof/edit.html.twig', [
             'prof' => $prof,
             'form' => $form->createView(),
         ]);

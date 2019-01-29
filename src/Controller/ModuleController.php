@@ -43,7 +43,7 @@ class ModuleController extends AbstractController
             return $this->redirectToRoute('admin_index');
         }
 
-        return $this->render('module/new.html.twig', [
+        return $this->render('admin/module/new.html.twig', [
             'module' => $module,
             'form' => $form->createView(),
         ]);
@@ -75,7 +75,7 @@ class ModuleController extends AbstractController
             ]);
         }
 
-        return $this->render('module/edit.html.twig', [
+        return $this->render('admin/module/edit.html.twig', [
             'module' => $module,
             'form' => $form->createView(),
         ]);
