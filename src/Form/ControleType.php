@@ -3,8 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Controle;
-use Doctrine\DBAL\Types\FloatType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,18 +13,23 @@ class ControleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $notes = $options['notes'];
+        $etudiants = $options['etudiants'];
 
         $builder
             ->add('nom')
             ->add('coefficient')
-            ->add('date')
+            ->add('date', DateType::class, [
+                'widget' => 'single_text',
+            ])
+            ->add('noteMax')
         ;
 
-        foreach($notes as $note)
+        foreach($etudiants as $etudiant)
         {
             $builder
-                ->add('note' . $note->getEtudiant()->getId(), FloatType::class, array('label' => $note->getEtudiant()->getPrenom() . ' ' . $note->getEtudiant()->getNom()))
+                ->add('note' . $etudiant->getId(), NumberType::class, array(
+                    "mapped" => false,
+                    'label' => 'note de ' . $etudiant->getPrenom() . ' ' . $etudiant->getNom() . ': '))
             ;
         }
     }
@@ -32,6 +38,7 @@ class ControleType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Controle::class,
+            'etudiants' => null,
         ]);
     }
 }

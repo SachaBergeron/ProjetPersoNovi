@@ -44,6 +44,11 @@ class Controle
      */
     private $notes;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $noteMax;
+
     public function __construct()
     {
         $this->notes = new ArrayCollection();
@@ -129,6 +134,18 @@ class Controle
                 $note->setControle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNoteMax(): ?float
+    {
+        return $this->noteMax;
+    }
+
+    public function setNoteMax(float $noteMax): self
+    {
+        $this->noteMax = $noteMax;
 
         return $this;
     }

@@ -39,36 +39,58 @@ class ControleController extends AbstractController
     /**
      * @Route("/new", name="controle_new", methods={"GET","POST"})
      */
-    public function newControle(Request $request, EtudiantRepository $etudiantRepository): Response
+    public function newControle(Request $request, EtudiantRepository $etudiantRepository,  \Swift_Mailer $mailer): Response
     {
         $controle = new Controle();
 
-        $i = 0;
         $etudiants = $etudiantRepository->findAll();
-        foreach($etudiants as $etudiant)
-        {
-            $note = new Note();
-            $etudiant->addNote($note);
-            $controle->addNote($note);
-        }
 
-        $form = $this->createForm(ControleType::class, $controle, ['notes' => $controle->getNotes(),]);
+        $form = $this->createForm(ControleType::class, $controle, array('etudiants' => $etudiants));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
 
             $session = new Session(/*new NativeSessionStorage(), new AttributeBag()*/);
             $module = $session->get('module');
+            $entityManager = $this->getDoctrine()->getManager();
+            $module =$entityManager->merge($module);
 
             $controle->setModule($module);
 
             foreach($etudiants as $etudiant)
             {
-                $etudiant->
+                $note = new Note();
+
+                $note->setNote($form->get('note' . $etudiant->getId())->getData());
+
+                $note->setControle($controle);
+                $note->setEtudiant($etudiant);
+//                $controle->addNote($note);
+//                $etudiant->addNote($note);
+
+                $entityManager->persist($note);
+
+                $message = (new \Swift_Message('Note ajoutée'))
+                    ->setFrom('sacha45400@hotmail.com')
+                    ->setTo($etudiant->getEmail())
+                    ->setBody(
+                        $this->renderView(
+                            'emails/ajoutNote.html.twig', [
+                            'prenom' => $etudiant->getPrenom(),
+                            'nom' => $etudiant->getNom(),
+                            'module' => $module->getNom(),
+//                            'prenomProf' => $module->getEnseignant()->getPrenom(),
+//                            'nomProf' => $module->getEnseignant()->getNom(),
+                            'note' => $note->getNote(),
+                            'max' => $form->get('noteMax')->getData(),
+                        ]),
+                        'text/html'
+                    );
+                $mailer->send($message);
             }
 
             $entityManager->persist($controle);
+            $entityManager->persist($module);
             $entityManager->flush();
 
             return $this->redirectToRoute('controle_index');
