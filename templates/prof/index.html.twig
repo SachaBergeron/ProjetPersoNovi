@@ -25,6 +25,11 @@
             display:flex; justify-content:space-between
         }
 
+        tbody tr:hover{
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
     </style>
 {% endblock %}
 
@@ -43,20 +48,14 @@
                 <th>Nom</th>
                 <th>Volume horaire</th>
                 <th>Coefficient</th>
-                <th>actions</th>
             </tr>
             </thead>
             <tbody>
             {% for module in modules %}
                 <tr>
-                    <td>{{ module.nom }}</td>
+                    <td><a href="{{ path('module_controles', {'id': module.id}) }}"></a>{{ module.nom }}</td>
                     <td>{{ module.volHoraire }}</td>
                     <td>{{ module.coefficient }}</td>
-                    <td id="actions">
-                        <a class="btn btn-primary" href="{{ path('module_controles', {'id': module.id}) }}">Voir les contrôles du module</a>
-                        <a class="btn btn-warning" href="{{ path('module_edit', {'id': module.id}) }}">Modifier</a>
-                        {{ include('admin/module/_delete_form.html.twig') }}
-                    </td>
                 </tr>
             {% else %}
                 <tr>
@@ -66,4 +65,21 @@
             </tbody>
         </table>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function() {
+
+            $('tbody tr').click(function() {
+                var href = $(this).find("a").attr("href");
+                if(href) {
+                    window.location = href;
+                }
+            });
+
+        });
+    </script>
+
 {% endblock %}
