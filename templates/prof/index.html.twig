@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Novi - Espace Enseignant{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .container{
+            margin: 0;
+            display: flex;
+        }
+
+        aside{
+            display:flex; flex-direction:column; width:20%; margin-left:0; color:white;
+        }
+
+        aside a{
+            margin-bottom:20px;
+        }
+
+        #modules{
+            width:100%; margin-left:50px;
+        }
+
+        #actions{
+            display:flex; justify-content:space-between
+        }
+
+        tbody tr:hover{
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <aside>
+        <a href="" class="btn btn-primary">lien</a>
+        <a href="" class="btn btn-primary">lien</a>
+    </aside>
+
+    <div id="modules">
+        <h1>Vos Modules</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Volume horaire</th>
+                <th>Coefficient</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for module in modules %}
+                <tr>
+                    <td><a href="{{ path('module_controles', {'id': module.id}) }}"></a>{{ module.nom }}</td>
+                    <td>{{ module.volHoraire }}</td>
+                    <td>{{ module.coefficient }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun module trouvé.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function() {
+
+            $('tbody tr').click(function() {
+                var href = $(this).find("a").attr("href");
+                if(href) {
+                    window.location = href;
+                }
+            });
+
+        });
+    </script>
+
+{% endblock %}

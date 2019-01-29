@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un Module{% endblock %}
+
+{% block body %}
+    <h1>Modifier un module</h1>
+
+    {{ include('admin/module/_form.html.twig', {'button_label': 'Confirmer'}) }}
+
+    <a class="btn btn-secondary" href="{{ path('admin_index') }}">Retour à la liste</a>
+
+    {{ include('admin/module/_delete_form.html.twig') }}
+{% endblock %}

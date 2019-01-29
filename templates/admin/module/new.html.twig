@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Module{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau module</h1>
+
+    {{ include('admin/module/_form.html.twig') }}<br>
+
+    <a class="btn btn-primary" href="{{ path('prof_register') }}">Si l'enseignant n'apparaît pas, ajoutez-le ici.</a><br><br>
+
+    <a class="btn btn-secondary" href="{{ path('admin_index') }}">Retour à la liste</a>
+{% endblock %}

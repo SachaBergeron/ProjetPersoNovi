@@ -4,7 +4,19 @@
         <meta charset="UTF-8">
         <title>{% block title %}Novi - Suivi de Notes{% endblock %}</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
-        {% block stylesheets %}{% endblock %}
+        <style>
+
+            .id{
+                position: absolute;
+                right: 100px;
+                top: 16px;
+                color: white;
+                font-size: 1.2em;
+            }
+
+        </style>
+        {% block stylesheets %}
+        {% endblock %}
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="margin-bottom:50px; ">
@@ -29,15 +41,38 @@
                                 <a class="nav-link" href="{{ path("admin_index") }}">Espace Administrateur</a>
                             </li>
 
+                        {% elseif is_granted('ROLE_PROF')%}
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("prof_index") }}">Espace Enseignant</a>
+                            </li>
+
                         {% endif %}
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path("security_logout") }}">Déconnexion</a>
                         </li>
+
                     {% endif %}
                 </ul>
             </div>
         </nav>
+
+        {% if app.user %}
+
+            {% if is_granted('ROLE_PROF') or is_granted('ROLE_ETUDIANT')%}
+                <div class="id">
+                    <p>Connecté : {{ app.user.prenom }} {{ app.user.nom }}</p>
+                </div>
+
+            {% else %}
+                <div class="id">
+                    <p>Connecté : Administrateur {{ app.user.username }}</p>
+                </div>
+            {% endif %}
+
+        {% endif %}
+
         <div class="container">
             {% block body %}{% endblock %}
         </div>

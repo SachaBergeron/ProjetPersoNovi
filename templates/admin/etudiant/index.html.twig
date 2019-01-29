@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des étudiants{% endblock %}
+
+{% block body %}
+    <h1>Etudiants</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etudiant in etudiants %}
+            <tr>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.username }}</td>
+                <td>{{ etudiant.email }}</td>
+                <td style="display:flex; justify-content:space-between">
+                    <a class="btn btn-warning" href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+                    {{ include('admin/etudiant/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun étudiant trouvé.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-secondary" href="{{ path('admin_index') }}">Retour</a>
+
+{% endblock %}
