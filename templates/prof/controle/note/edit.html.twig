@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Note{% endblock %}
+
+{% block body %}
+    <h1>Modifier la note de {{ note.etudiant.prenom }} {{ note.etudiant.nom }}</h1>
+
+    {{ include('prof/controle/note/_form.html.twig', {'button_label': 'Confirmer'}) }}
+
+    <a class="btn btn-secondary" href="{{ path('note_index') }}">Retour aux notes</a>
+
+    {#{{ include('prof/controle/note/_delete_form.html.twig') }}#}
+{% endblock %}

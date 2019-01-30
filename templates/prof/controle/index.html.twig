@@ -54,7 +54,7 @@
                     <td>{{ controle.date ? controle.date|date('Y-m-d') : '' }}</td>
                     <td>{{ controle.coefficient }}</td>
                     <td id="actions">
-                        <a class="btn btn-primary" href="">Afficher les notes</a>
+                        <a class="btn btn-primary" href="{{ path('controle_show', {'id': controle.id}) }}">Afficher les notes</a>
                         <a class="btn btn-warning" href="{{ path('controle_edit', {'id': controle.id}) }}">Modifier</a>
                         {{ include('prof/controle/_delete_form.html.twig') }}
                     </td>

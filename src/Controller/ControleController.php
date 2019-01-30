@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Controle;
 use App\Entity\Note;
+use App\Form\ControleEditType;
 use App\Form\ControleType;
 use App\Repository\ControleRepository;
 use App\Repository\EtudiantRepository;
@@ -21,7 +22,7 @@ class ControleController extends AbstractController
     /**
      * @Route("/", name="controle_index", methods={"GET"})
      */
-    public function index(ControleRepository $controleRepository): Response
+    public function index(): Response
     {
         $session = new Session(/*new NativeSessionStorage(), new AttributeBag()*/);
         if ($session->get('module')) {
@@ -32,7 +33,7 @@ class ControleController extends AbstractController
             return $this->render('prof/controle/index.html.twig', ['controles' => $module->getControles(), 'module' => $module]);
         }
         else {
-            return $this->redirectToRoute("suivi");
+            return $this->redirectToRoute("prof_index");
         }
     }
 
@@ -103,13 +104,13 @@ class ControleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="controle_show", methods={"GET"})
+     * @Route("/show/{id}", name="controle_show", methods={"GET"})
      */
-    public function show(Controle $controle): Response
+    public function notes(Controle $controle): Response
     {
-        return $this->render('controle/show.html.twig', [
-            'controle' => $controle,
-        ]);
+        $session = new Session(/*new NativeSessionStorage(), new AttributeBag()*/);
+        $session->set('controle', $controle);
+        return $this->redirectToRoute('note_index');
     }
 
     /**
@@ -117,7 +118,7 @@ class ControleController extends AbstractController
      */
     public function edit(Request $request, Controle $controle): Response
     {
-        $form = $this->createForm(ControleType::class, $controle);
+        $form = $this->createForm(ControleEditType::class, $controle);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -128,7 +129,7 @@ class ControleController extends AbstractController
             ]);
         }
 
-        return $this->render('controle/edit.html.twig', [
+        return $this->render('prof/controle/edit.html.twig', [
             'controle' => $controle,
             'form' => $form->createView(),
         ]);
