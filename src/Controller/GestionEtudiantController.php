@@ -85,7 +85,8 @@ class GestionEtudiantController extends AbstractController
      */
     public function delete(Request $request, Etudiant $etudiant): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$etudiant->getId(), $request->request->get('_token'))) {
+        $id = $etudiant->getId();
+        if ($this->isCsrfTokenValid('delete'.$id, $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($etudiant);
             $entityManager->flush();

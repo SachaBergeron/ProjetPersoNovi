@@ -140,7 +140,8 @@ class ControleController extends AbstractController
      */
     public function delete(Request $request, Controle $controle): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$controle->getId(), $request->request->get('_token'))) {
+        $id = $controle->getId();
+        if ($this->isCsrfTokenValid('delete'.$id, $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($controle);
             $entityManager->flush();
