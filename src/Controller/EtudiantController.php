@@ -25,7 +25,7 @@ class EtudiantController extends AbstractController
 //            $user = $this->getUser();
 
             return $this->render('etudiant/index.html.twig', [
-                'modules' => $moduleRepository->findAll(),
+                'modules' => $moduleRepository->findAll()
             ]);
         }
         else{
@@ -71,5 +71,27 @@ class EtudiantController extends AbstractController
         else {
             return $this->redirectToRoute("etudiant_index");
         }
+    }
+
+    /**
+     * @Route("/moyennes", name="etudiant_moyennes", methods="GET")
+     */
+    public function moyennes(ModuleRepository $moduleRepository)
+    {
+        $user = $this->getUser();
+
+//        $modules = $moduleRepository->findAll();
+//        $lesModules = [];
+//
+//        foreach ($modules as $module)
+//        {
+//            $em = $this->getDoctrine()->getManager();
+//            $module = $em->merge($module);
+//            array_push($lesModules, $module);
+//        }
+
+        return $this->render('etudiant/moyennes.html.twig', [
+            'modules' => $moduleRepository->findAll(), 'notes' => $user->getNotes()
+        ]);
     }
 }
