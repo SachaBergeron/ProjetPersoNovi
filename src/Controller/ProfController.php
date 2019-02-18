@@ -28,7 +28,7 @@ class ProfController extends AbstractController
             ]);
         }
         else{
-            return $this->redirectToRoute("login");
+            return $this->redirectToRoute("security_login");
         }
     }
 
