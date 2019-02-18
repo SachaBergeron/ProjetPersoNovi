@@ -31,7 +31,9 @@
 {% block body %}
     <aside>
         <a href="{{ path("controle_new") }}" class="btn btn-primary">Ajouter un contrôle</a>
+        {% if not is_granted('ROLE_ADMIN') %}
         <a href="{{ path('prof_index') }}" class="btn btn-secondary">Retour aux modules</a>
+        {% endif %}
     </aside>
 
     <div id="modules">

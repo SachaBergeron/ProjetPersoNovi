@@ -25,6 +25,11 @@
             display:flex; justify-content:space-between
         }
 
+        tbody tr:hover{
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
     </style>
 {% endblock %}
 
@@ -53,7 +58,7 @@
             <tbody>
             {% for module in modules %}
                 <tr>
-                    <td>{{ module.nom }}</td>
+                    <td><a class="lienMod" href="{{ path('module_controles', {'id': module.id}) }}"></a>{{ module.nom }}</td>
                     <td>{{ module.volHoraire }}</td>
                     <td>{{ module.coefficient }}</td>
                     <td>{% if(module.enseignant) %}
@@ -75,4 +80,23 @@
             </tbody>
         </table>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function() {
+
+            $('tbody tr').click(function() {
+                var elem = $(".lienMod");
+                var href = $(this).find(elem).attr("href");
+                console.log(href);
+                if(href) {
+                    window.location = href;
+                }
+            });
+
+        });
+    </script>
+
 {% endblock %}

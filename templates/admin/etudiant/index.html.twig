@@ -23,7 +23,7 @@
                 <td>{{ etudiant.username }}</td>
                 <td>{{ etudiant.email }}</td>
                 <td style="display:flex; justify-content:space-between">
-                    <a class="btn btn-warning" href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+                    <a class="btn btn-warning" href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">modifier</a>
                     {{ include('admin/etudiant/_delete_form.html.twig') }}
                 </td>
             </tr>
