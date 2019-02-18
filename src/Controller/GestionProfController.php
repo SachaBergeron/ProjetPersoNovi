@@ -85,7 +85,8 @@ class GestionProfController extends AbstractController
      */
     public function delete(Request $request, Prof $prof): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$prof->getId(), $request->request->get('_token'))) {
+        $id = $prof->getId();
+        if ($this->isCsrfTokenValid('delete'.$id, $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
 
             $modules = $prof->getModules();

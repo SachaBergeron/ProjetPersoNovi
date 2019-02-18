@@ -14,6 +14,11 @@
                 font-size: 1.2em;
             }
 
+            aside{
+                padding-right: 10px;
+                border-right: 2px solid lightgray;
+            }
+
         </style>
         {% block stylesheets %}
         {% endblock %}
@@ -41,11 +46,14 @@
                                 <a class="nav-link" href="{{ path("admin_index") }}">Espace Administrateur</a>
                             </li>
 
-                        {% elseif is_granted('ROLE_PROF')%}
+                        {% else %}
+                            {% if is_granted('ROLE_PROF')%}
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path("prof_index") }}">Espace Enseignant</a>
                             </li>
+
+                            {% endif %}
 
                         {% endif %}
 
@@ -60,10 +68,12 @@
 
         {% if app.user %}
 
-            {% if is_granted('ROLE_PROF') or is_granted('ROLE_ETUDIANT')%}
-                <div class="id">
-                    <p>Connecté : {{ app.user.prenom }} {{ app.user.nom }}</p>
-                </div>
+            {% if not is_granted('ROLE_ADMIN') %}
+                {% if is_granted('ROLE_PROF') or is_granted('ROLE_ETUDIANT')%}
+                    <div class="id">
+                        <p>Connecté : {{ app.user.prenom }} {{ app.user.nom }}</p>
+                    </div>
+                {% endif %}
 
             {% else %}
                 <div class="id">

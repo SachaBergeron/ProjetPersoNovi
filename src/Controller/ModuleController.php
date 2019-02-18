@@ -86,7 +86,8 @@ class ModuleController extends AbstractController
      */
     public function delete(Request $request, Module $module): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$module->getId(), $request->request->get('_token'))) {
+        $id = $module->getId();
+        if ($this->isCsrfTokenValid('delete'.$id, $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($module);
             $entityManager->flush();

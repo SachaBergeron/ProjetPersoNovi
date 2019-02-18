@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier un enseignant{% endblock %}
+{% block title %}Modifier un étudiant{% endblock %}
 
 {% block body %}
-    <h1>Modifier un Enseignant</h1>
+    <h1>Modifier un Etudiant</h1>
 
     {{ include('admin/etudiant/_form.html.twig', {'button_label': 'Confirmer'}) }}
 
-    <a href="{{ path('etudiant_affiche') }}">retour à la liste</a>
+    <a class="btn btn-secondary" href="{{ path('etudiant_affiche') }}">retour à la liste</a>
 
     {{ include('admin/etudiant/_delete_form.html.twig') }}
 {% endblock %}

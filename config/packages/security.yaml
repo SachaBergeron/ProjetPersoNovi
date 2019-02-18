@@ -62,3 +62,6 @@ security:
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/prof, roles: ROLE_PROF }
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_PROF
