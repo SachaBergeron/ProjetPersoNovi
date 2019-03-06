@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e13c0a1f-6404-4ee7-b05f-1e0f1faad3d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EtudiantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EtudiantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/etudiant/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/etudiant/moyennes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/etudiant/moyennes.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,25 +43,6 @@
     </expand>
     <select />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/Entity/Module.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="533">
-                    <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="139" selection-end-column="7" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="761433083">
       <usages-collector id="statistics.lifecycle.project">
@@ -84,7 +61,7 @@
           <entry key="dummy" value="32" />
           <entry key="env" value="139" />
           <entry key="php" value="4119" />
-          <entry key="twig" value="5546" />
+          <entry key="twig" value="5640" />
           <entry key="yaml" value="189" />
         </counts>
       </usages-collector>
@@ -93,7 +70,7 @@
           <entry key=".env file" value="139" />
           <entry key="PHP" value="4119" />
           <entry key="PLAIN_TEXT" value="32" />
-          <entry key="Twig" value="5546" />
+          <entry key="Twig" value="5640" />
           <entry key="YAML" value="189" />
         </counts>
       </usages-collector>
@@ -108,7 +85,7 @@
           <entry key="php" value="91" />
           <entry key="prof" value="3" />
           <entry key="sql" value="3" />
-          <entry key="twig" value="98" />
+          <entry key="twig" value="99" />
           <entry key="yaml" value="11" />
         </counts>
       </usages-collector>
@@ -118,7 +95,7 @@
           <entry key="Database Element" value="11" />
           <entry key="PHP" value="91" />
           <entry key="Scratch" value="3" />
-          <entry key="Twig" value="98" />
+          <entry key="Twig" value="99" />
           <entry key="YAML" value="11" />
         </counts>
       </usages-collector>
@@ -127,52 +104,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ProfController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
-              <folding>
-                <element signature="e#34#58#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ControleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-              <folding>
-                <element signature="e#34#58#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/EtudiantController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="728">
+              <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/etudiant/moyennes.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+            <state relative-caret-position="167">
+              <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -186,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/etudiant/controle.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="436">
@@ -539,18 +483,18 @@
       <workItem from="1548868595651" duration="5535000" />
       <workItem from="1549873821192" duration="759000" />
       <workItem from="1550503585800" duration="13615000" />
-      <workItem from="1551863245800" duration="7528000" />
+      <workItem from="1551863245800" duration="9326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85769000" />
+    <option name="totallyTimeSpent" value="87567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37248322" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24362417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -564,7 +508,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18865249" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18865249" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -812,13 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/prof/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -936,13 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="139" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/etudiant/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -950,17 +880,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/EtudiantController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="533">
+          <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="139" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/etudiant/moyennes.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/prof/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+        <state relative-caret-position="82">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -968,6 +898,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/EtudiantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/etudiant/moyennes.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
         </state>
       </provider>
     </entry>
