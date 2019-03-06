@@ -35,7 +35,7 @@
 
 {% block body %}
     <aside>
-        <a href="{{ path('etudiant_moyennes') }}" class="btn btn-primary">Moyennes</a>
+        <a href="{{ path('etudiant_moyennes', {'id' : app.user.id}) }}" class="btn btn-primary">Moyennes</a>
     </aside>
 
     <div id="modules">

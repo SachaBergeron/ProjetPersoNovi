@@ -132,4 +132,10 @@ class Module
 
         return $this;
     }
+
+
+//    function __toString()
+//    {
+//       $this->mod
+//    }
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Controle;
+use App\Entity\Etudiant;
 use App\Entity\Module;
 use App\Form\ControleType;
 use App\Repository\ModuleRepository;
@@ -74,13 +75,19 @@ class EtudiantController extends AbstractController
     }
 
     /**
-     * @Route("/moyennes", name="etudiant_moyennes", methods="GET")
+     * @Route("/moyennes/{id}", name="etudiant_moyennes", methods="GET")
+     * @param ModuleRepository $moduleRepository
+     * @return Response
      */
-    public function moyennes(ModuleRepository $moduleRepository)
+    public function moyennes(ModuleRepository $moduleRepository, Etudiant $etudiant)
     {
-        $user = $this->getUser();
+//        $user = $this->getUser();
 
-//        $modules = $moduleRepository->findAll();
+        $modules = $moduleRepository->findAll();
+
+//        $em = $this->getDoctrine()->getManager();
+//        $modules = $em->merge($modules);
+
 //        $lesModules = [];
 //
 //        foreach ($modules as $module)
@@ -90,8 +97,12 @@ class EtudiantController extends AbstractController
 //            array_push($lesModules, $module);
 //        }
 
+//        return $this->render('etudiant/moyennes.html.twig', [
+//            'modules' => $moduleRepository->findAll(), 'notes' => $user->getNotes()
+//        ]);
+
         return $this->render('etudiant/moyennes.html.twig', [
-            'modules' => $moduleRepository->findAll(), 'notes' => $user->getNotes()
+            'modules' => $modules, 'notes' => $etudiant->getNotes(),'test'=>'test'
         ]);
     }
 }
