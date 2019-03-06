@@ -72,11 +72,13 @@ class EtudiantRegistrationController extends AbstractController
                 );
             $mailer->send($message);
 
-            return $this->render('admin/compte_cree.html.twig', [
-                'reponse_password' => $password,
-                'reponse_username' => $user->getUsername(),
-                'profil' => 'étudiant',
-            ]);
+//            return $this->render('admin/compte_cree.html.twig', [
+//                'reponse_password' => $password,
+//                'reponse_username' => $user->getUsername(),
+//                'profil' => 'étudiant',
+//            ]);
+
+            return $this->redirectToRoute('admin_index');
         }
 
         return $this->render('etudiantRegistration/register.html.twig', [

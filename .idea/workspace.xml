@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e13c0a1f-6404-4ee7-b05f-1e0f1faad3d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/moyennes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/etudiant/moyennes.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EtudiantRegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EtudiantRegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProfRegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfRegistrationController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +48,7 @@
     <session id="761433083">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -60,7 +61,7 @@
         <counts>
           <entry key="dummy" value="32" />
           <entry key="env" value="139" />
-          <entry key="php" value="4119" />
+          <entry key="php" value="4167" />
           <entry key="twig" value="5640" />
           <entry key="yaml" value="189" />
         </counts>
@@ -68,7 +69,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="139" />
-          <entry key="PHP" value="4119" />
+          <entry key="PHP" value="4167" />
           <entry key="PLAIN_TEXT" value="32" />
           <entry key="Twig" value="5640" />
           <entry key="YAML" value="189" />
@@ -82,10 +83,10 @@
           <entry key="etudiant" value="2" />
           <entry key="module" value="1" />
           <entry key="note" value="1" />
-          <entry key="php" value="91" />
+          <entry key="php" value="94" />
           <entry key="prof" value="3" />
           <entry key="sql" value="3" />
-          <entry key="twig" value="99" />
+          <entry key="twig" value="100" />
           <entry key="yaml" value="11" />
         </counts>
       </usages-collector>
@@ -93,9 +94,9 @@
         <counts>
           <entry key=".env file" value="4" />
           <entry key="Database Element" value="11" />
-          <entry key="PHP" value="91" />
+          <entry key="PHP" value="94" />
           <entry key="Scratch" value="3" />
-          <entry key="Twig" value="99" />
+          <entry key="Twig" value="100" />
           <entry key="YAML" value="11" />
         </counts>
       </usages-collector>
@@ -112,11 +113,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="20" column="9" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
+              <folding>
+                <element signature="e#34#70#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/etudiant/moyennes.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+            <state relative-caret-position="-190">
+              <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -130,20 +143,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/etudiant/controle.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+            <state relative-caret-position="476">
+              <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+        <entry file="file://$PROJECT_DIR$/src/Controller/EtudiantRegistrationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+            <state relative-caret-position="524">
+              <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -166,8 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/templates/module/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/module/_delete_form.html.twig" />
         <option value="$PROJECT_DIR$/templates/module/_form.html.twig" />
         <option value="$PROJECT_DIR$/templates/prof/_delete_form.html.twig" />
@@ -217,6 +228,8 @@
         <option value="$PROJECT_DIR$/templates/etudiant/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/EtudiantController.php" />
         <option value="$PROJECT_DIR$/templates/etudiant/moyennes.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/ProfRegistrationController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/EtudiantRegistrationController.php" />
       </list>
     </option>
   </component>
@@ -483,18 +496,17 @@
       <workItem from="1548868595651" duration="5535000" />
       <workItem from="1549873821192" duration="759000" />
       <workItem from="1550503585800" duration="13615000" />
-      <workItem from="1551863245800" duration="9326000" />
+      <workItem from="1551863245800" duration="10942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87567000" />
+    <option name="totallyTimeSpent" value="89183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24362417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24362417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -508,7 +520,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18865249" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18865249" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -545,13 +557,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://09dfbf53-4eb3-40ac-a54c-1215c9470042/schema/main/table/etudiant">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/EtudiantType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -783,27 +788,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/EtudiantRegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
           <folding>
             <element signature="e#34#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="9" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="e#34#70#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -839,16 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ProfRegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="116" selection-start-line="18" selection-start-column="92" selection-end-line="18" selection-end-column="116" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Note.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -863,13 +843,6 @@
           <folding>
             <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -894,13 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/etudiant/controle.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/EtudiantController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
@@ -910,8 +876,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/etudiant/moyennes.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        <state relative-caret-position="-190">
+          <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profRegistration/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="9" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="e#34#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/EtudiantRegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ProfRegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="80" column="44" lean-forward="true" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/etudiant/controle.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
         </state>
       </provider>
     </entry>
