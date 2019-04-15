@@ -49,6 +49,7 @@ class ProfRegistrationController extends AbstractController
             $username = $prenomSplit[0] . lcfirst($user->getNom());
 
             $user->setUsername($username);
+            $user->setJamaisCo(true);
 
             $entityManager->persist($user);
             $entityManager->flush();
@@ -85,4 +86,5 @@ class ProfRegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+
 }

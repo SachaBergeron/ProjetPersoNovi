@@ -45,11 +45,28 @@ class SecurityController extends AbstractController
         }
         elseif ($this->isGranted('ROLE_PROF'))
         {
-            return $this->redirectToRoute('prof_index');
+            $user = $this->getUser();
+
+            if($user->getJamaisCo() != false){
+                return $this->redirectToRoute('prof_change');
+            }
+            else{
+                return $this->redirectToRoute('prof_index');
+            }
         }
         elseif($this->isGranted('ROLE_ETUDIANT'))
         {
-            return $this->redirectToRoute('etudiant_index');
+            $user = $this->getUser();
+
+            if($user->getJamaisCo() != false){
+                return $this->redirectToRoute('etudiant_change');
+            }
+            else{
+                return $this->redirectToRoute('etudiant_index');
+            }
+        }
+        else{
+            return $this->redirectToRoute('accueil');
         }
 
     }

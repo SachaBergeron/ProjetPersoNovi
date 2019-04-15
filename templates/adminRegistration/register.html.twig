@@ -5,6 +5,7 @@
 {% block body %}
     <h1>Register</h1>
 
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.username) }}
         {{ form_row(registrationForm.plainPassword) }}
