@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Novi - Espace Enseignant{% endblock %}
+{% block title %}Novi - Espace Etudiant{% endblock %}
 
 {% block stylesheets %}
     <style>
@@ -35,7 +35,7 @@
 
 {% block body %}
     <aside>
-        {#<a href="" class="btn btn-primary">lien</a>#}
+        <a href="{{ path('etudiant_moyennes', {'id' : app.user.id}) }}" class="btn btn-primary">Moyennes</a>
     </aside>
 
     <div id="modules">
@@ -47,18 +47,20 @@
                 <th>Nom</th>
                 <th>Volume horaire</th>
                 <th>Coefficient</th>
+                <th>Contrôles</th>
             </tr>
             </thead>
             <tbody>
             {% for module in modules %}
                 <tr>
-                    <td><a href="{{ path('module_controles', {'id': module.id}) }}"></a>{{ module.nom }}</td>
+                    <td><a href="{{ path('etudiant_module_controles', {'id': module.id}) }}"></a>{{ module.nom }}</td>
                     <td>{{ module.volHoraire }}</td>
                     <td>{{ module.coefficient }}</td>
+                    <td>{{ module.controles|length }}</td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="5">Aucun module trouvé.</td>
+                    <td colspan="5">Vous n'êtes inscrit à aucun module.</td>
                 </tr>
             {% endfor %}
             </tbody>

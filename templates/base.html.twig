@@ -55,6 +55,14 @@
 
                             {% endif %}
 
+                            {% if is_granted('ROLE_ETUDIANT')%}
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path("etudiant_index") }}">Espace Etudiant</a>
+                                </li>
+
+                            {% endif %}
+
                         {% endif %}
 
                         <li class="nav-item">

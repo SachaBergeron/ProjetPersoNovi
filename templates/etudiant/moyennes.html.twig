@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Moyennes{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .container{
+            margin: 0;
+            display: flex;
+        }
+
+        aside{
+            display:flex; flex-direction:column; width:20%; margin-left:0; color:white;
+        }
+
+        aside a{
+            margin-bottom:20px;
+        }
+
+        #modules{
+            width:100%; margin-left:50px;
+        }
+
+        #actions{
+            display:flex; justify-content:space-between
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <aside>
+        <a href="{{ path('etudiant_index') }}" class="btn btn-secondary">Retour aux modules</a>
+    </aside>
+
+    <div id="modules">
+
+        <h1>Vos moyennes</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Coefficient</th>
+                    <th>Moyenne</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% set sumMoyennes = 0 %}
+            {% set nbModule = 0 %}
+
+            {% for module in modules %}
+                {% if module.controles|length > 0 %}
+
+                    {% set sumNotes = 0 %}
+                    {% set countNotes = 0 %}
+
+
+                        {% for controle in module.controles %}
+
+                            {% for note in notes %}
+
+                                {% if note.controle == controle %}
+                                    {% set sumNotes = sumNotes + (((note.note / controle.noteMax) * 20) * controle.coefficient) %}
+                                    {% set countNotes = countNotes + controle.coefficient %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                        {% endfor %}
+
+                    <tr>
+                        <td>{{ module.nom }}</td>
+                        <td>{{ module.coefficient }}</td>
+                        <td>
+                             {{ (sumNotes / countNotes)|round(2, 'floor') }} / 20
+                        </td>
+                        {#<td id="actions">#}
+                            {#<a class="btn btn-warning" href="{{ path('', {'id': controle.id}) }}">Faire une réclamation</a>#}
+                        {#</td>#}
+                    </tr>
+
+                    {% set sumMoyennes = sumMoyennes + (sumNotes / countNotes) %}
+                    {% set nbModule = nbModule + 1 %}
+
+                {% else %}
+
+                    <tr>
+                        <td>{{ module.nom }}</td>
+                        <td>{{ module.coefficient }}</td>
+                        <td>
+                            Aucune note dans ce module.
+                        </td>
+                    </tr>
+
+                {% endif %}
+
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun module trouvé</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>Moyenne Générale</td>
+                <td> - </td>
+                <td>{{ (sumMoyennes / nbModule)|round(2, 'floor') }} / 20</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
