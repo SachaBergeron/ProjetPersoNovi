@@ -74,7 +74,7 @@ class ProfController extends AbstractController
             // do anything else you need here, like send an email
 
             $message = (new \Swift_Message('Mot de Passe Novi changé'))
-                ->setFrom('sacha45400@hotmail.com')
+                ->setFrom('administration@novi.com')
                 ->setTo($user->getEmail())
                 ->setBody(
                     $this->renderView(

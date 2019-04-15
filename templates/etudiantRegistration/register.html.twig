@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Ajouter un Etudiant</h1>
 
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    {% form_theme registrationForm 'bootstrap_4_layout.html.twig' %}
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.prenom) }}
         {{ form_row(registrationForm.nom) }}

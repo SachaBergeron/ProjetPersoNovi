@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Etudiant;
 use App\Form\EtudiantRegistrationFormType;
+use App\Repository\EtudiantRepository;
 use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ class EtudiantRegistrationController extends AbstractController
     /**
      * @Route("/admin/etudiant", name="etudiant_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder,  \Swift_Mailer $mailer): Response
+    public function register(EtudiantRepository $etudiantRepository, Request $request, UserPasswordEncoderInterface $passwordEncoder,  \Swift_Mailer $mailer): Response
     {
         $generator = new ComputerPasswordGenerator();
 
@@ -50,13 +51,25 @@ class EtudiantRegistrationController extends AbstractController
 
             $user->setUsername($username);
 
+            $etudiants = $etudiantRepository->findAll();
+
+            $i = 1;
+            foreach ($etudiants as $etudiant){
+                if($etudiant->getUsername() == $user -> getUsername()){
+                    $user->setUsername($username . $i);
+                    $i++;
+                }
+            }
+
+            $user->setJamaisCo(true);
+
             $entityManager->persist($user);
             $entityManager->flush();
 
             // do anything else you need here, like send an email
 
             $message = (new \Swift_Message('Compte Novi créé'))
-                ->setFrom('sacha45400@hotmail.com')
+                ->setFrom('administration@novi.com')
                 ->setTo($user->getEmail())
                 ->setBody(
                     $this->renderView(

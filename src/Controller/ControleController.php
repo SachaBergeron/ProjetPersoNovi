@@ -72,7 +72,7 @@ class ControleController extends AbstractController
                 $entityManager->persist($note);
 
                 $message = (new \Swift_Message('Note ajoutée'))
-                    ->setFrom('sacha45400@hotmail.com')
+                    ->setFrom('administration@novi.com')
                     ->setTo($etudiant->getEmail())
                     ->setBody(
                         $this->renderView(
