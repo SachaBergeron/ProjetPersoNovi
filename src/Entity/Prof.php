@@ -57,6 +57,11 @@ class Prof implements UserInterface
      */
     private $modules;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $jamaisCo;
+
     public function __construct()
     {
         $this->modules = new ArrayCollection();
@@ -198,6 +203,18 @@ class Prof implements UserInterface
                 $module->setEnseignant(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getJamaisCo(): ?bool
+    {
+        return $this->jamaisCo;
+    }
+
+    public function setJamaisCo(?bool $jamaisCo): self
+    {
+        $this->jamaisCo = $jamaisCo;
 
         return $this;
     }

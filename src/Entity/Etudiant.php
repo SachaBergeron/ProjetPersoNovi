@@ -57,6 +57,11 @@ class Etudiant implements UserInterface
      */
     private $notes;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $jamaisCo;
+
     public function __construct()
     {
         $this->notes = new ArrayCollection();
@@ -198,6 +203,18 @@ class Etudiant implements UserInterface
                 $note->setEtudiant(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getJamaisCo(): ?bool
+    {
+        return $this->jamaisCo;
+    }
+
+    public function setJamaisCo(?bool $jamaisCo): self
+    {
+        $this->jamaisCo = $jamaisCo;
 
         return $this;
     }

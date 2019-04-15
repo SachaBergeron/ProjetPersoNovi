@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifiez votre mot de passe{% endblock %}
+
+{% block body %}
+    <h1>C'est votre première connexion, veuillez modifier votre mot de passe</h1>
+
+    {% form_theme changeForm 'bootstrap_4_layout.html.twig' %}
+
+    {{ form_start(changeForm) }}
+        {{ form_row(changeForm.password)}}
+
+        <button class="btn btn-primary">Valider</button>
+    {{ form_end(changeForm) }}
+{% endblock %}

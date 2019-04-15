@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Prof;
 use App\Form\ProfRegistrationFormType;
+use App\Repository\ProfRepository;
 use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ class ProfRegistrationController extends AbstractController
     /**
      * @Route("/admin/prof", name="prof_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder,  \Swift_Mailer $mailer): Response
+    public function register(ProfRepository $profRepository, Request $request, UserPasswordEncoderInterface $passwordEncoder,  \Swift_Mailer $mailer): Response
     {
         $generator = new ComputerPasswordGenerator();
 
@@ -50,13 +51,25 @@ class ProfRegistrationController extends AbstractController
 
             $user->setUsername($username);
 
+            $profs = $profRepository->findAll();
+
+            $i = 1;
+            foreach ($profs as $prof){
+                if($prof->getUsername() == $user -> getUsername()){
+                    $user->setUsername($username . $i);
+                    $i++;
+                }
+            }
+
+            $user->setJamaisCo(true);
+
             $entityManager->persist($user);
             $entityManager->flush();
 
             // do anything else you need here, like send an email
 
             $message = (new \Swift_Message('Compte Novi créé'))
-                ->setFrom('sacha45400@hotmail.com')
+                ->setFrom('administration@novi.com')
                 ->setTo($user->getEmail())
                 ->setBody(
                     $this->renderView(
@@ -85,4 +98,5 @@ class ProfRegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+
 }
