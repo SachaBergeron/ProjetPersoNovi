@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e13c0a1f-6404-4ee7-b05f-1e0f1faad3d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/09dfbf53-4eb3-40ac-a54c-1215c9470042.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/09dfbf53-4eb3-40ac-a54c-1215c9470042.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ModuleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ModuleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/etudiant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/etudiant/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/controle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/etudiant/controle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/etudiant/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/prof/controle/note/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prof/controle/note/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/prof/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prof/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/prof/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/prof/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +106,7 @@
           <entry key="php" value="146" />
           <entry key="prof" value="7" />
           <entry key="sql" value="3" />
-          <entry key="twig" value="149" />
+          <entry key="twig" value="152" />
           <entry key="yaml" value="12" />
         </counts>
       </usages-collector>
@@ -123,7 +117,7 @@
           <entry key="JavaScript" value="1" />
           <entry key="PHP" value="146" />
           <entry key="Scratch" value="3" />
-          <entry key="Twig" value="149" />
+          <entry key="Twig" value="152" />
           <entry key="YAML" value="12" />
         </counts>
       </usages-collector>
@@ -141,10 +135,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/admin/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/admin/etudiant/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -182,8 +176,6 @@
         <option value="$PROJECT_DIR$/src/Controller/ModuleController.php" />
         <option value="$PROJECT_DIR$/src/Controller/GestionProfController.php" />
         <option value="$PROJECT_DIR$/templates/admin/prof/edit.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/prof/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/etudiant/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/etudiant/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Admin.php" />
         <option value="$PROJECT_DIR$/templates/prof/controle/index.html.twig" />
@@ -219,6 +211,8 @@
         <option value="$PROJECT_DIR$/templates/etudiant/controle.html.twig" />
         <option value="$PROJECT_DIR$/templates/prof/controle/note/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/prof/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/etudiant/index.html.twig" />
       </list>
     </option>
   </component>
@@ -407,14 +401,7 @@
               <item name="ProjetPersoSymfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetPersoSymfony" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetPersoSymfony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetPersoSymfony" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="accueil" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjetPersoSymfony" type="b2602c69:ProjectViewProjectNode" />
@@ -483,12 +470,12 @@
       <workItem from="1550503585800" duration="13615000" />
       <workItem from="1551863245800" duration="10942000" />
       <workItem from="1555330892488" duration="1756000" />
-      <workItem from="1555427623817" duration="3600000" />
+      <workItem from="1555427623817" duration="3688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106386000" />
+    <option name="totallyTimeSpent" value="106474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -545,30 +532,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Controle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding>
-            <element signature="e#30#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Note.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -876,6 +839,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/prof/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Module.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -883,10 +860,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/admin/etudiant/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/etudiant/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
