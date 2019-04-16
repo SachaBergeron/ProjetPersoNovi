@@ -26,7 +26,17 @@ class Module
     /**
      * @ORM\Column(type="integer")
      */
-    private $vol_horaire;
+    private $vol_horaireTD;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $vol_horaireTP;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $vol_horaireCM;
 
     /**
      * @ORM\Column(type="float")
@@ -66,14 +76,38 @@ class Module
         return $this;
     }
 
-    public function getVolHoraire(): ?int
+    public function getVolHoraireTD(): ?int
     {
-        return $this->vol_horaire;
+        return $this->vol_horaireTD;
     }
 
-    public function setVolHoraire(int $vol_horaire): self
+    public function setVolHoraireTD(int $vol_horaireTD): self
     {
-        $this->vol_horaire = $vol_horaire;
+        $this->vol_horaireTD = $vol_horaireTD;
+
+        return $this;
+    }
+
+    public function getVolHoraireTP(): ?int
+    {
+        return $this->vol_horaireTP;
+    }
+
+    public function setVolHoraireTP(int $vol_horaireTP): self
+    {
+        $this->vol_horaireTP = $vol_horaireTP;
+
+        return $this;
+    }
+
+    public function getVolHoraireCM(): ?int
+    {
+        return $this->vol_horaireCM;
+    }
+
+    public function setVolHoraireCM(int $vol_horaireCM): self
+    {
+        $this->vol_horaireCM = $vol_horaireCM;
 
         return $this;
     }

@@ -49,17 +49,17 @@
             <thead>
             <tr>
                 <th>Nom</th>
-                <th>Volume horaire</th>
+                <th>Volume horaire TD|TP|CM</th>
                 <th>Coefficient</th>
                 <th>Enseignant</th>
-                <th>actions</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             {% for module in modules %}
                 <tr>
                     <td><a class="lienMod" href="{{ path('module_controles', {'id': module.id}) }}"></a>{{ module.nom }}</td>
-                    <td>{{ module.volHoraire }}</td>
+                    <td>{{ module.volHoraireTD }} | {{ module.volHoraireTP }} | {{ module.volHoraireCM }}</td>
                     <td>{{ module.coefficient }}</td>
                     <td>{% if(module.enseignant) %}
                             {{ module.enseignant.prenom }} {{ module.enseignant.nom }}

@@ -45,7 +45,7 @@
             <thead>
             <tr>
                 <th>Nom</th>
-                <th>Volume horaire</th>
+                <th>Volume horaire TD|TP|CM</th>
                 <th>Coefficient</th>
                 <th>Contrôles</th>
             </tr>
@@ -54,7 +54,7 @@
             {% for module in modules %}
                 <tr>
                     <td><a href="{{ path('etudiant_module_controles', {'id': module.id}) }}"></a>{{ module.nom }}</td>
-                    <td>{{ module.volHoraire }}</td>
+                    <td>{{ module.volHoraireTD }} | {{ module.volHoraireTP }} | {{ module.volHoraireCM }}</td>
                     <td>{{ module.coefficient }}</td>
                     <td>{{ module.controles|length }}</td>
                 </tr>
